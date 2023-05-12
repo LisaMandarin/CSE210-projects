@@ -45,11 +45,11 @@ class Program
                 
                 // journal.AddEntry(entry);
             }
-            if (choice == 2)
+            else if (choice == 2)
             {
                 journal.Display();
             }
-            if (choice == 3)
+            else if (choice == 3)
             {
                 Console.Write("What is the filename? ");
                 string filename = Console.ReadLine();
@@ -60,7 +60,7 @@ class Program
                     Console.WriteLine(line);
                 }
             }
-            if (choice == 4)
+            else if (choice == 4)
             {
                 Console.Write("What is the filename? ");
                 string filename = Console.ReadLine();
@@ -88,7 +88,7 @@ class Program
                 }
                 
             }
-            if (choice == 5)
+            else if (choice == 5)
             {
                 break;
             }
