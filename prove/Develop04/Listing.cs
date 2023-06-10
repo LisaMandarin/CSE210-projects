@@ -21,11 +21,22 @@ public class Listing : Activity
         CountDown();
         List<string> responses = new List<string>();
         DateTime startTime = DateTime.Now;
-        DateTime endTime = startTime.AddSeconds(activityTime);
-        while (DateTime.Now < endTime)
+        while ((DateTime.Now - startTime).TotalSeconds < activityTime)
         {
-            string response = Console.ReadLine();
-            responses.Add(response);
+            if (!Console.KeyAvailable)
+            {
+                continue;
+            }
+            ConsoleKeyInfo key = Console.ReadKey();
+            if (key.Key == ConsoleKey.Enter) 
+            {
+                Console.WriteLine("");
+                responses.Add("\n");
+            }
+            else
+            {
+                responses.Add(key.KeyChar.ToString());
+            }            
         }
         int number = responses.Count;
         Console.WriteLine($"You have listed {number} items!");
