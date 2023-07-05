@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 
-
 public class Video
 {
     private string _title;
